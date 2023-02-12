@@ -4,19 +4,22 @@ var result = document.getElementById("result_display");
 /*ボタンをおして数字を表示*/
 function edit(elem){
  result.value = result.value + elem;
- }
+}
 
 /*ボタンをおして記号（小数点含む）を表示。※連続入力できないようにする*/
+/*下記修正分(最初に入力した時は非表示にする。)*/ 
 function edit2(elem){
- if(result.value.slice(-1) === "+"
-  || result.value.slice(-1) === "-" 
-  || result.value.slice(-1) === "*" 
-  || result.value.slice(-1) === "/"
-  || result.value.slice(-1) === "."){
-   result.value = result.value.slice(0,-1);
-   result.value = result.value + elem;
-  }else{
-   result.value = result.value + elem;
+ if(result.value.slice(0) == 0 ){
+  result.value = result.value;
+ }else if(result.value.slice(-1) === "+" || 
+  result.value.slice(-1) === "-" || 
+  result.value.slice(-1) === "*" || 
+  result.value.slice(-1) === "/" || 
+  result.value.slice(-1) === "."){
+  result.value = result.value.slice(0,-1);
+  result.value = result.value + elem;
+ }else{
+  result.value = result.value + elem;
  }
 }
  
@@ -24,8 +27,7 @@ function edit2(elem){
 function edit3(elem){
  if(result.value.slice(0) == 0 ){
   result.value = result.value;
-  }
-  else{
+ }else{
   result.value = result.value + elem;
  }
 }
@@ -33,10 +35,9 @@ function edit3(elem){
 /*「＝」を押すと計算する*/
 function cal(){
  result.value = new Function("return " + result.value)();
- }
+}
  
- /*「AC」でリセットする */
- function reset(){
-  result.value = "";
- }
- 
+/*「AC」でリセットする */
+function reset(){
+ result.value = "";
+}
