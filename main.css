@@ -1,0 +1,50 @@
+/*電卓全体*/
+.main_container{
+  width:300px;
+}
+
+/*計算結果の表示*/
+#result_display{
+  background-color:black;
+  color:white;
+  text-align: right;
+  height:25px;
+  width:290px;
+  
+}
+
+/*ボタン共通*/
+.number{
+ border-radius: 5px;
+ width:70px;
+ margin:1px 0;
+}
+
+.operator{
+ border-radius: 5px;
+ width:70px;
+ margin:1px 0;
+}
+
+/*１~4行目*/
+.first_row second_row third_row fourth_row{
+  display:flex;
+  justify-content:space-around;
+}
+
+/*5行目*/
+.fifth_row{
+  display:flex;
+  justify-content:space-around;
+  width:300px;
+}
+.ac{
+  border-radius: 5px;
+  width:148px;
+  margin:1px 0;
+}
+.equal{
+  border-radius: 5px;
+  width:148px;
+  margin:1px 0;
+}
